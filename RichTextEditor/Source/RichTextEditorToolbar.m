@@ -31,7 +31,6 @@
 #import "RichTextEditorFontSizePickerViewController.h"
 #import "RichTextEditorFontPickerViewController.h"
 #import "RichTextEditorColorPickerViewController.h"
-#import "WEPopoverController.h"
 #import "RichTextEditorToggleButton.h"
 #import "UIFont+RichTextEditor.h"
 
@@ -526,14 +525,7 @@
 	
 	if (!popover)
 	{
-		if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
-		{
-			popover = (id<RichTextEditorPopover>) [[UIPopoverController alloc] initWithContentViewController:viewController];
-		}
-		else
-		{
-			popover = (id<RichTextEditorPopover>) [[WEPopoverController alloc] initWithContentViewController:viewController];
-		}
+        popover = (id<RichTextEditorPopover>) [[UIPopoverController alloc] initWithContentViewController:viewController];
 	}
 	
 	[self.popover dismissPopoverAnimated:YES];
