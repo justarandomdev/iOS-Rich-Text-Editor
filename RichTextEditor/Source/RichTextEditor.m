@@ -367,7 +367,7 @@
 	}
 	else
 	{
-		int location = [self offsetFromPosition:self.beginningOfDocument toPosition:self.selectedTextRange.start];
+		NSInteger location = [self offsetFromPosition:self.beginningOfDocument toPosition:self.selectedTextRange.start];
 		
 		if (location == self.text.length)
 			location --;
