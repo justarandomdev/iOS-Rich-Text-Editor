@@ -454,7 +454,7 @@
 	[button.titleLabel setFont:[UIFont boldSystemFontOfSize:10]];
 	[button.titleLabel setTextColor:[UIColor blackColor]];
 	[button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-	[button setImage:[UIImage imageNamed:image] forState:UIControlStateNormal];
+	[button setImage:[UIImage imageNamed:image inBundle:[NSBundle bundleForClass:self.class] compatibleWithTraitCollection:nil] forState:UIControlStateNormal];
 	
 	return button;
 }

@@ -34,7 +34,7 @@
 	if (self = [super init])
 	{
 		self.on = NO;
-		[self setBackgroundImage:[UIImage imageNamed:@"buttonSelected.png"] forState:UIControlStateHighlighted];
+        [self setBackgroundImage:[UIImage imageNamed:@"buttonSelected.png" inBundle:[NSBundle bundleForClass:self.class] compatibleWithTraitCollection:nil] forState:UIControlStateHighlighted];
 	}
 	
 	return self;
@@ -49,7 +49,7 @@
 
 - (UIImage *)imageForState
 {
-	return (self.on) ? [UIImage imageNamed:@"buttonSelected.png"] :nil;
+	return (self.on) ? [UIImage imageNamed:@"buttonSelected.png" inBundle:[NSBundle bundleForClass:self.class] compatibleWithTraitCollection:nil] :nil;
 }
 
 @end
