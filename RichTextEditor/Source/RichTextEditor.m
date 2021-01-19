@@ -175,9 +175,9 @@
 
 #pragma mark - Public Methods -
 
-- (NSString *)htmlString
+- (NSString *)htmlString:(BOOL)forceBlackForeground
 {
-	return [self.attributedText htmlString];
+	return [self.attributedText htmlString:forceBlackForeground];
 }
 
 - (void)setBorderColor:(UIColor *)borderColor

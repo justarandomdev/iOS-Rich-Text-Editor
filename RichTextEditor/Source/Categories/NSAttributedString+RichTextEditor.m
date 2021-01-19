@@ -90,7 +90,7 @@
 	return paragraphRanges;
 }
 
-- (NSString *)htmlString
+- (NSString *)htmlString:(BOOL)forceBlackForeground
 {
 	NSMutableString *htmlString = [NSMutableString string];
 	NSArray *paragraphRanges = [self rangeOfParagraphsFromTextRange:NSMakeRange(0, self.string.length-1)];
@@ -140,8 +140,13 @@
 								  
 								  [fontString appendFormat:@"font-size:%.0fpx; ", font.pointSize];
 								  
-								  if (foregroundColor && [foregroundColor isKindOfClass:[UIColor class]])
-									  [fontString appendFormat:@"color:%@; ", [self htmlRgbColor:foregroundColor]];
+                                    if (foregroundColor && [foregroundColor isKindOfClass:[UIColor class]]) {
+                                        if (forceBlackForeground) {
+                                            [fontString appendFormat:@"color:%@; ", [self htmlRgbColor:[UIColor blackColor]]];
+                                        } else {
+                                            [fontString appendFormat:@"color:%@; ", [self htmlRgbColor:foregroundColor]];
+                                        }
+                                    }
 								  
 								  if (backGroundColor && [backGroundColor isKindOfClass:[UIColor class]])
 									  [fontString appendFormat:@"background-color:%@; ", [self htmlRgbColor:backGroundColor]];

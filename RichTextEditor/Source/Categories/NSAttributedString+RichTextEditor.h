@@ -32,6 +32,6 @@
 
 - (NSRange)firstParagraphRangeFromTextRange:(NSRange)range;
 - (NSArray *)rangeOfParagraphsFromTextRange:(NSRange)textRange;
-- (NSString *)htmlString;
+- (NSString *)htmlString:(BOOL)forceBlackForeground;
 
 @end

@@ -48,6 +48,6 @@
 
 - (void)setBorderColor:(UIColor*)borderColor;
 - (void)setBorderWidth:(CGFloat)borderWidth;
-- (NSString *)htmlString;
+- (NSString *)htmlString:(BOOL)forceBlackForeground;
 
 @end
